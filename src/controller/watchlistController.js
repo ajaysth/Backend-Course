@@ -12,7 +12,7 @@ const addToWatchlist =async (req, res)=>{
 
 
     if(!existMovie){
-        res.status(404).json({message:"Movie not found"})
+        return res.status(404).json({message:"Movie not found"})
     }
 
     //checlk if movie added in watchlist
@@ -26,7 +26,7 @@ const addToWatchlist =async (req, res)=>{
     })
 
     if(exixtInWatchlist){
-        res.status(400).json({message:"Movie already in watchlist"})
+        return res.status(400).json({message:"Movie already in watchlist"})
     }
 
     const watchList = await prisma.watchlistItem.create({
