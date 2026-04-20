@@ -15,7 +15,7 @@ config() // Load environment variables from .env file
 connectDB();
 
 const app = express()
-const PORT = 5001
+const PORT = process.env.PORT || 5001
 
 
 process.on("uncaughtException",(error)=>{
