@@ -7,6 +7,7 @@ import {connectDB,disconnectDB} from "./config/db.js"
 //importing routes
 import movieRoutes from "./routes/movieRoutes.js"
 import authRoutes from "./routes/authRoutes.js"
+import watchlistRoutes from "./routes/watchlistRoutes.js"
 
 
 
@@ -42,6 +43,7 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 
 app.use("/movies",movieRoutes)
 app.use("/auth",authRoutes)
+app.use("/watchlist",watchlistRoutes)
 
 
 const server = app.listen(PORT, ()=>{

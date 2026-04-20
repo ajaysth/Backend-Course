@@ -6,12 +6,12 @@ export const generateToken  = (userId,res)=>{
         expiresIn:process.env.JWT_EXPIRES_IN || "1d"
     })
 
-    res.cookie("jwt",token),{
+    res.cookie("jwt",token,{
         httpOnly:true,
         secure:process.env.NODE_ENV === "production",
         sameSite  : "strict",
         maxAge: (1000 * 60 * 60 * 24) * 2, // 2 day
-    }
+    });
     return token;
 
 }
