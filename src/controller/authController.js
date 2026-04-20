@@ -63,7 +63,7 @@ const login = async (req,res)=>{
     //generate JWT token
     const token = generateToken(user.id,res)
 
-    res.status(200).json({status:"success",message:"Login successful", token})
+    res.status(200).json({status:"success",message:"Login successful",user, token})
 }
 
 
